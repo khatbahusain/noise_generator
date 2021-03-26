@@ -96,8 +96,11 @@ def remove_whitespace(data):
 if __name__ == "__main__":
     input_file = glob.glob('input/' + "/*.csv")
     
-    os.mkdir('output')
-
+    try:
+        os.mkdir('output')
+    except:
+        pass
+    
     for t in input_file:
         
         data = pd.read_csv(t, error_bad_lines=False)
